@@ -339,7 +339,7 @@ body {
 }
 
 @media (max-width: 1042px) {
-  .container {
+  .header-container {
     gap: 2rem;
     margin: 0 9%;
   }
@@ -349,7 +349,7 @@ body {
 }
 
 @media (max-width: 1200px) {
-  .container {
+  .header-container {
     margin: 0 10%;
   }
   .projects-container {
@@ -358,7 +358,7 @@ body {
 }
 
 @media (max-width: 1000px) {
-  .container {
+  .header-container {
     margin: 0 5%;
   }
   .projects-container {
@@ -374,10 +374,10 @@ body {
   .links-container {
     display: none;
   }
-  .container {
+  .header-container {
     display: none;
   }
-  .mobile-container {
+  .mobile-header-container {
     display: flex;
   }
 
