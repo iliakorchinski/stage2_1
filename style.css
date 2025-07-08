@@ -57,6 +57,10 @@ body {
   font-family: var(--font-metropolis);
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   display: flex;
   width: 100%;
@@ -84,6 +88,7 @@ body {
   align-items: center;
   height: 100%;
 }
+
 .burger-menu {
   display: none;
   align-content: center;
@@ -182,6 +187,21 @@ body {
 .link {
   text-decoration: none;
   color: var(--text-color);
+}
+
+.link-mobile {
+  font-family: var(--font-open-sans);
+  font-weight: 400;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  display: block;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
+  text-decoration: none;
+  color: var(--bg-color-white);
+}
+
+.link-mobile:hover {
+  color: #6db33f;
 }
 
 .navbar-link-container:hover .dropdown {
@@ -381,8 +401,92 @@ body {
     display: flex;
   }
 
+  .cross-icon {
+    position: relative;
+    margin-top: 0.25rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    z-index: 1001;
+  }
+  .cross-icon button {
+    all: unset;
+  }
+
   .burger-menu {
     display: block;
+  }
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #191e1e;
+    z-index: 1000;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .side-menu.open {
+    transform: translateY(0);
+  }
+
+  .side-menu-navigation {
+    padding: 3rem;
+  }
+
+  .side-menu-navigation span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    line-height: 3rem;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
+    color: var(--bg-color-white);
+    font-family: var(--font-open-sans);
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 1rem 0;
+    padding-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .side-menu-navigation span:hover {
+    color: #6db33f;
+  }
+
+  .side-menu-navigation span::after {
+    content: '';
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background-image: url('assets/icons/down-arrow-backup-2-svgrepo-com.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+  }
+
+  .side-menu-list {
+    display: block;
+    list-style: none;
+  }
+
+  .side-menu-list li {
+    height: 2.25rem;
+  }
+
+  .side-menu-list a {
+    text-decoration: none;
+    color: rgb(152, 175, 174);
+    align-content: center;
+    font-family: var(--font-open-sans);
+    font-size: 1.25rem;
+  }
+
+  .side-menu-list a:hover {
+    color: #6db33f;
   }
   .mobile-logo {
     display: flex;
