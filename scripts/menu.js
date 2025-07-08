@@ -1,6 +1,6 @@
 const menu = document.querySelector('.links-container');
 
-export function renderMenu(links) {
+export const renderMenu = (links) => {
   links.forEach((link) => {
     const linkDiv = document.createElement('div');
     linkDiv.classList.add('navbar-link-container');
@@ -20,4 +20,4 @@ export function renderMenu(links) {
     const linkElement = menu.firstElementChild;
     menu.insertBefore(linkDiv, linkElement);
   });
-}
+};
