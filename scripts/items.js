@@ -1,6 +1,10 @@
 const listContainer = document.querySelector('.list-container');
 
 export const renderItems = (items) => {
+  listContainer.innerHTML = '';
+  if (typeof items === 'string') {
+    listContainer.innerHTML = `<p class="results-not-found">${items}</p>`;
+  }
   items.forEach((item) => {
     const itemArtickle = document.createElement('article');
     itemArtickle.classList.add('list-item');

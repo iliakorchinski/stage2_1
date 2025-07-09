@@ -2,6 +2,7 @@ import { links, projects } from './data.js';
 import { renderItems } from './items.js';
 import { renderMenu } from './menu.js';
 import { toggleBurgerMenu } from './mobile-menu.js';
+import { clearInput, debouncedSearch } from './search.js';
 
 window.addEventListener('resize', () => {
   const element = document.querySelector('.side-menu-navigation');
@@ -15,3 +16,5 @@ window.addEventListener('resize', () => {
 renderMenu(links);
 renderItems(projects);
 toggleBurgerMenu();
+clearInput();
+debouncedSearch();
