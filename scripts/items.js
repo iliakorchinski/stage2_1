@@ -1,29 +1,32 @@
-const listContainer = document.querySelector('.list-container');
+const itemForRender = (data) => {
+  const itemArtickle = document.createElement('article');
+  itemArtickle.classList.add('list-item');
 
-export const renderItems = (items) => {
-  items.forEach((item) => {
-    const itemArtickle = document.createElement('article');
-    itemArtickle.classList.add('list-item');
-
-    itemArtickle.innerHTML = `
+  itemArtickle.innerHTML = `
             <a href="#">
                 <div class="list-item-header">
                   <div class="image">
-                    <img src=${item.image} alt=${item.title} />
+                    <img src=${data.image} alt=${data.title} />
                   </div>
-                  <div><h1 class="list-item-title">${item.title}</h1></div>
+                  <div><h1 class="list-item-title">${data.title}</h1></div>
                 </div>
                 <div>
                   <p class="list-item-description">
-                    ${item.description}
+                    ${data.description}
                   </p>
                   <div>
-                    <span class="list-item-version">${item.version}</span>
-                    <span class="additional-versions">${item.otherVersions}</span>
+                    <span class="list-item-version">${data.version}</span>
+                    <span class="additional-versions">${data.otherVersions}</span>
                   </div>
                 </div>
             </a>`;
+  return itemArtickle;
+};
 
-    listContainer.appendChild(itemArtickle);
+export const renderItems = (items, container) => {
+  items.forEach((item) => {
+    const itemArtickle = itemForRender(item);
+
+    container.appendChild(itemArtickle);
   });
 };
