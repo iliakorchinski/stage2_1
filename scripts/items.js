@@ -1,3 +1,5 @@
+const listContainer = document.querySelector('.list-container');
+
 const itemForRender = (data) => {
   const itemArticle = document.createElement('article');
   itemArticle.classList.add('list-item');
@@ -54,6 +56,10 @@ const itemForRender = (data) => {
 };
 
 export const renderItems = (items, container) => {
+  container.replaceChildren();
+  if (typeof items === 'string') {
+    listContainer.innerHTML = `<p class="results-not-found">${items}</p>`;
+  }
   items.forEach((item) => {
     const itemArtickle = itemForRender(item);
 
