@@ -1,5 +1,8 @@
 import { projects } from './data.js';
 import { renderItems } from './items.js';
+
+const listContainer = document.querySelector('.list-container');
+
 export const clearInput = () => {
   const searchInput = document.getElementById('site-search');
   const clearBtn = document.getElementById('clear-btn');
@@ -8,7 +11,7 @@ export const clearInput = () => {
     const query = e.target.value.trim();
     if (query === '') {
       clearBtn.classList.add('hidden');
-      renderItems(projects);
+      renderItems(projects, listContainer);
     } else {
       clearBtn.classList.remove('hidden');
     }
@@ -16,7 +19,7 @@ export const clearInput = () => {
     clearBtn.addEventListener('click', () => {
       searchInput.value = '';
       clearBtn.classList.add('hidden');
-      renderItems(projects);
+      renderItems(projects, listContainer);
     });
   });
 };
@@ -45,10 +48,10 @@ export const searchTerm = (onChange) => {
 
 export const handleFilteredResults = (results) => {
   if (typeof results !== 'string' && results.length !== 0) {
-    renderItems(results);
+    renderItems(results, listContainer);
   }
   if (typeof results === 'string') {
-    renderItems(results);
+    renderItems(results, listContainer);
   }
 };
 

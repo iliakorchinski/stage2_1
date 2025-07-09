@@ -27,6 +27,7 @@ export const renderItems = (items, container) => {
   container.innerHTML = '';
   if (typeof items === 'string') {
     container.innerHTML = `<p class="results-not-found">${items}</p>`;
+    return;
   }
   items.forEach((item) => {
     const itemArtickle = itemForRender(item);
