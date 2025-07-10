@@ -1,7 +1,7 @@
 import { projects } from './data.js';
 import { renderItems } from './items.js';
 
-const listContainer = document.querySelector('.list-container');
+const listContainer = document.querySelector('#list-container');
 
 export const clearInput = () => {
   const searchInput = document.getElementById('site-search');

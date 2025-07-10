@@ -4,10 +4,10 @@ import { renderMenu } from './menu.js';
 import { toggleBurgerMenu } from './mobile-menu.js';
 import { clearInput, debouncedSearch } from './search.js';
 
-const listContainer = document.querySelector('.list-container');
+const listContainer = document.querySelector('#list-container');
 
 window.addEventListener('resize', () => {
-  const element = document.querySelector('.side-menu-navigation');
+  const element = document.querySelector('#side-menu-navigation');
   if (window.innerWidth > 900) {
     element.style.display = 'none';
   } else {

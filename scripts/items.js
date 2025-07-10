@@ -1,32 +1,65 @@
 const itemForRender = (data) => {
-  const itemArtickle = document.createElement('article');
-  itemArtickle.classList.add('list-item');
+  const itemArticle = document.createElement('article');
+  itemArticle.classList.add('list-item');
 
-  itemArtickle.innerHTML = `
-            <a href="#">
-                <div class="list-item-header">
-                  <div class="image">
-                    <img src=${data.image} alt=${data.title} />
-                  </div>
-                  <div><h1 class="list-item-title">${data.title}</h1></div>
-                </div>
-                <div>
-                  <p class="list-item-description">
-                    ${data.description}
-                  </p>
-                  <div>
-                    <span class="list-item-version">${data.version}</span>
-                    <span class="additional-versions">${data.otherVersions}</span>
-                  </div>
-                </div>
-            </a>`;
-  return itemArtickle;
+  const link = document.createElement('a');
+  link.href = '#';
+
+  const header = document.createElement('div');
+  header.classList.add('list-item-header');
+
+  const imageContainer = document.createElement('div');
+  imageContainer.classList.add('image');
+
+  const img = document.createElement('img');
+  img.src = data.image;
+  img.alt = data.title || '';
+
+  imageContainer.appendChild(img);
+  header.appendChild(imageContainer);
+
+  const titleContainer = document.createElement('div');
+  const title = document.createElement('h1');
+  title.classList.add('list-item-title');
+  title.textContent = data.title;
+  titleContainer.appendChild(title);
+  header.appendChild(titleContainer);
+
+  const content = document.createElement('div');
+
+  const description = document.createElement('p');
+  description.classList.add('list-item-description');
+  description.textContent = data.description;
+  content.appendChild(description);
+
+  const versions = document.createElement('div');
+
+  const version = document.createElement('span');
+  version.classList.add('list-item-version');
+  version.textContent = data.version;
+
+  const otherVersions = document.createElement('span');
+  otherVersions.classList.add('additional-versions');
+  otherVersions.textContent = data.otherVersions;
+
+  versions.appendChild(version);
+  versions.appendChild(otherVersions);
+  content.appendChild(versions);
+
+  link.appendChild(header);
+  link.appendChild(content);
+  itemArticle.appendChild(link);
+
+  return itemArticle;
 };
 
 export const renderItems = (items, container) => {
-  container.innerHTML = '';
+  container.replaceChildren();
   if (typeof items === 'string') {
-    container.innerHTML = `<p class="results-not-found">${items}</p>`;
+    const notFound = document.createElement('p');
+    notFound.classList.add('results-not-found');
+    notFound.textContent = items;
+    container.appendChild(notFound);
     return;
   }
   items.forEach((item) => {
