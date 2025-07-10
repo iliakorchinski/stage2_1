@@ -5,7 +5,17 @@
 }
 
 :root {
+  --font-size-075: 0.75rem;
+  --font-size-1: 1rem;
+  --font-size-2: 2rem;
+  --margin-05-rem: 0.5rem;
+  --margin-1rem: 1rem;
+  --margin-left-right-4: 0 4%;
+  --margin-left-right-5: 0 5%;
+  --margin-left-right-9: 0 9%;
+  --margin-left-right-10: 0 10%;
   --text-color: #111;
+  --text-color-green: #6db33f;
   --bg-color-projects: #ebf2f2;
   --bg-color-white: #fff;
   --font-open-sans: 'Open Sans', sans-serif;
@@ -108,7 +118,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin: 0 4%;
+  margin: var(--margin-left-right-4);
 }
 
 .mobile-header-container {
@@ -168,7 +178,7 @@ body {
   box-shadow: 0 5px 30px 0 rgba(108, 135, 135, 0.5);
   list-style: none;
   line-height: 1.5rem;
-  font-size: 1rem;
+  font-size: var(--font-size-1);
 }
 
 .dropdown a {
@@ -181,7 +191,7 @@ body {
 }
 
 .dropdown a:hover {
-  color: #6db33f;
+  color: var(--text-color-green);
 }
 
 .link {
@@ -192,7 +202,7 @@ body {
 .link-mobile {
   font-family: var(--font-open-sans);
   font-weight: 400;
-  font-size: 2rem;
+  font-size: var(--font-size-2);
   padding-bottom: 1rem;
   display: block;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
@@ -201,7 +211,7 @@ body {
 }
 
 .link-mobile:hover {
-  color: #6db33f;
+  color: var(--text-color-green);
 }
 
 .navbar-link-container:hover .dropdown {
@@ -216,7 +226,7 @@ body {
 .projects-container {
   padding: 3rem 0;
   max-width: 960px;
-  margin: 0 4%;
+  margin: var(--margin-left-right-4);
 }
 
 .content-container {
@@ -238,7 +248,7 @@ body {
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 2.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--margin-1rem);
 }
 
 .project-button {
@@ -250,7 +260,7 @@ body {
   padding: 0.9375rem 1.875rem;
   border: 2px solid var(--text-color);
   background: transparent;
-  font-size: 0.9rem;
+  font-size: var(--font-size-1);
   font-weight: 700;
   transition: 0.2s ease;
   z-index: 0;
@@ -276,7 +286,7 @@ body {
 }
 .extra-border {
   height: 6px;
-  background: linear-gradient(45deg, #6db33f 26%, #80ea6e 89%);
+  background: linear-gradient(45deg, var(--text-color-green) 26%, #80ea6e 89%);
 }
 
 .items-container {
@@ -344,16 +354,15 @@ body {
   background-color: #80ea6e;
   color: var(--text-color);
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: var(--font-size-075);
   border: 0;
   border-radius: 0.1875rem;
-  margin-bottom: 1.25px;
 }
 
 .additional-versions {
-  margin-left: 0.5rem;
+  margin-left: var(--margin-05-rem);
   font-family: var(--font-open-sans);
-  font-size: 0.75rem;
+  font-size: var(--font-size-075);
   font-weight: 400;
   color: rgb(97, 113, 125);
 }
@@ -361,28 +370,28 @@ body {
 @media (max-width: 1042px) {
   .header-container {
     gap: 2rem;
-    margin: 0 9%;
+    margin: var(--margin-left-right-9);
   }
   .projects-container {
-    margin: 0 9%;
+    margin: var(--margin-left-right-9);
   }
 }
 
 @media (max-width: 1200px) {
   .header-container {
-    margin: 0 10%;
+    margin: var(--margin-left-right-10);
   }
   .projects-container {
-    margin: 0 10%;
+    margin: var(--margin-left-right-10);
   }
 }
 
 @media (max-width: 1000px) {
   .header-container {
-    margin: 0 5%;
+    margin: var(--margin-left-right-5);
   }
   .projects-container {
-    margin: 0 5%;
+    margin: var(--margin-left-right-5);
   }
   .list-item-header {
     flex-direction: column;
@@ -404,7 +413,7 @@ body {
   .cross-icon {
     position: relative;
     margin-top: 0.25rem;
-    margin-right: 0.5rem;
+    margin-right: var(--margin-05-rem);
     cursor: pointer;
     top: 0;
     right: 0;
@@ -446,14 +455,14 @@ body {
     color: var(--bg-color-white);
     font-family: var(--font-open-sans);
     font-weight: 400;
-    font-size: 2rem;
-    margin: 1rem 0;
+    font-size: var(--font-size-2);
+    margin: var(--margin-1rem) 0;
     padding-bottom: 0.5rem;
     cursor: pointer;
   }
 
   .side-menu-navigation span:hover {
-    color: #6db33f;
+    color: var(--text-color-green);
   }
 
   .side-menu-navigation span::after {
@@ -465,7 +474,7 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: middle;
-    margin-right: 0.5rem;
+    margin-right: var(--margin-05-rem);
   }
 
   .side-menu-list {
@@ -486,7 +495,7 @@ body {
   }
 
   .side-menu-list a:hover {
-    color: #6db33f;
+    color: var(--text-color-green);
   }
   .mobile-logo {
     display: flex;
