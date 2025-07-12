@@ -1,4 +1,4 @@
-const menu = document.querySelector('.links-container');
+const menu = document.querySelector('#links-container');
 
 export const renderMenu = (links) => {
   links.forEach((link) => {
