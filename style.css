@@ -6,14 +6,28 @@
 
 :root {
   --display-flex: flex;
-  --size-1rem: 1rem;
-  --size-2rem: 2rem;
-  --size-3rem: 3rem;
+  --spacing-page-side-sm: 4%;
+  --spacing-page-side-md: 5%;
+  --spacing-page-side-lg: 9%;
+  --spacing-page-side-xl: 10%;
+  --spacing-xxs: 0.375rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.25rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  --spacing-xxxl: 3.5rem;
   --align-center: center;
   --text-color-green: #6db33f;
   --text-color: #111;
+  --text-color-dark-blue: #61717d;
+  --text-color-muted-teal: #98afae;
   --bg-color-projects: #ebf2f2;
   --bg-color-white: #fff;
+  --bg-color-light-green: #80ea6e;
+  --color-charcoal: #191e1e;
   --font-open-sans: 'Open Sans', sans-serif;
   --font-metropolis: 'Metropolis', sans-serif;
 }
@@ -75,7 +89,7 @@ body {
 
 .mobile-logo {
   display: none;
-  height: var(--size-2rem);
+  height: var(--spacing-xl);
   align-items: var(--align-center);
 }
 .mobile-logo a {
@@ -99,8 +113,8 @@ body {
   display: none;
   align-content: var(--align-center);
 
-  width: var(--size-3rem);
-  height: var(--size-3rem);
+  width: var(--spacing-xxl);
+  height: var(--spacing-xxl);
 }
 .burger-menu button {
   all: unset;
@@ -114,7 +128,7 @@ body {
   width: 100%;
   display: var(--display-flex);
   justify-content: space-between;
-  margin: 0 4%;
+  margin: 0 var(--spacing-page-side-sm);
 }
 
 .mobile-header-container {
@@ -122,7 +136,7 @@ body {
   display: none;
   justify-content: space-between;
   align-items: var(--align-center);
-  padding: 0 0.3125rem;
+  padding: 0 var(--spacing-xs);
 }
 
 .nav-links {
@@ -166,22 +180,23 @@ body {
   position: absolute;
   border: 0;
   border-radius: 6px;
-  margin-top: 1.25rem;
-  padding: var(--size-1rem);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
   top: calc(100% - 20px);
   left: 0;
   background-color: var(--bg-color-white);
-  box-shadow: 0 5px 30px 0 rgba(108, 135, 135, 0.5);
+  box-shadow: 0 5px 30px 0 #6c878780;
   list-style: none;
   line-height: 1.5rem;
-  font-size: var(--size-1rem);
+  font-size: var(--spacing-sm);
 }
 
 .dropdown a {
   display: block;
   color: var(--text-color);
   text-decoration: none;
-  padding: 0.375rem var(--size-3rem) 0.375rem var(--size-1rem);
+  padding: var(--spacing-xxs) var(--spacing-xxl) var(--spacing-xxs)
+    var(--spacing-sm);
   white-space: nowrap;
   font-family: var(--font-open-sans);
 }
@@ -198,8 +213,8 @@ body {
 .link-mobile {
   font-family: var(--font-open-sans);
   font-weight: 400;
-  font-size: var(--size-2rem);
-  padding-bottom: var(--size-1rem);
+  font-size: var(--spacing-xl);
+  padding-bottom: var(--spacing-sm);
   display: block;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
   text-decoration: none;
@@ -220,9 +235,9 @@ body {
 }
 
 .projects-container {
-  padding: var(--size-3rem) 0;
+  padding: var(--spacing-xxl) 0;
   max-width: 960px;
-  margin: 0 4%;
+  margin: 0 var(--spacing-page-side-sm);
 }
 
 .content-container {
@@ -230,21 +245,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
-  padding: var(--size-2rem) 0;
+  padding: var(--spacing-xl) 0;
 }
 
 .project-title {
   font-weight: 700;
-  font-size: 3.5rem;
-  padding: var(--size-1rem) 0;
+  font-size: var(--spacing-xxxl);
+  padding: var(--spacing-sm) 0;
 }
 
 .project-description {
   font-family: var(--font-open-sans);
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: var(--spacing-lg);
   line-height: 2.2rem;
-  margin-bottom: var(--size-1rem);
+  margin-bottom: var(--spacing-sm);
 }
 
 .project-button {
@@ -253,10 +268,10 @@ body {
   display: inline-block;
   text-decoration: none;
   color: var(--text-color);
-  padding: 0.9375rem 1.875rem;
+  padding: var(--spacing-sm) var(--spacing-xl);
   border: 2px solid var(--text-color);
   background: transparent;
-  font-size: var(--size-1rem);
+  font-size: var(--spacing-sm);
   font-weight: 700;
   transition: 0.2s ease;
   z-index: 0;
@@ -282,15 +297,19 @@ body {
 }
 .extra-border {
   height: 6px;
-  background: linear-gradient(45deg, var(--text-color-green) 26%, #80ea6e 89%);
+  background: linear-gradient(
+    45deg,
+    var(--text-color-green) 26%,
+    var(--bg-color-light-green) 89%
+  );
 }
 
 .search-container {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1.5rem;
+  justify-content: var(--align-center);
+  align-items: var(--align-center);
+  padding-top: var(--spacing-xl);
 }
 
 .search-container label {
@@ -300,16 +319,16 @@ body {
 .search-container input {
   width: 40%;
   max-width: 600px;
-  padding: 0.75rem 1.25rem;
+  padding: var(--spacing-sm) var(--spacing-xl);
   border: 1px solid #d9e9e9;
   border-radius: 0.25rem;
   font-family: var(--font-open-sans);
-  font-size: 1rem;
+  font-size: var(--spacing-sm);
 }
 
 .search-container input:focus {
   outline: none;
-  border-color: #6db33f;
+  border-color: var(--text-color-green);
 }
 
 input[type='search']::-webkit-search-cancel-button {
@@ -329,13 +348,13 @@ input[type='search']::-webkit-search-cancel-button {
 .results-not-found {
   font-family: var(--font-open-sans);
   font-weight: 400;
-  font-size: 2rem;
-  color: #61717d;
-  padding: 2rem;
+  font-size: var(--spacing-xl);
+  color: var(--text-color-dark-blue);
+  padding: var(--spacing-xl);
 }
 
 .items-container {
-  padding: var(--size-3rem) var(--size-2rem) 0 var(--size-2rem);
+  padding: var(--spacing-xxl) var(--spacing-xl) 0 var(--spacing-xl);
 }
 
 .list-container {
@@ -345,7 +364,7 @@ input[type='search']::-webkit-search-cancel-button {
 
 .list-item {
   width: 33%;
-  padding: 0.75rem;
+  padding: var(--spacing-s);
 }
 
 .list-item a {
@@ -355,7 +374,7 @@ input[type='search']::-webkit-search-cancel-button {
   border-radius: 5px;
   text-decoration: none;
   color: var(--text-color);
-  padding: 1.5625rem 1.25rem 2.1875rem;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
   height: 100%;
   min-height: 9.375rem;
 }
@@ -388,56 +407,55 @@ input[type='search']::-webkit-search-cancel-button {
   font-family: var(--font-open-sans);
   font-weight: 400;
   line-height: 1.7rem;
-  padding: 0.75rem 0;
-  color: #61717d;
+  padding: var(--spacing-s) 0;
+  color: var(--text-color-dark-blue);
 }
 .list-item-version {
   display: inline-block;
   font-family: var(--font-open-sans);
   align-items: var(--align-center);
-  padding: 0.3125rem 0.5625rem;
-  background-color: #80ea6e;
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  background-color: var(--bg-color-light-green);
   color: var(--text-color);
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: var(--spacing-s);
   border: 0;
   border-radius: 0.1875rem;
-  margin-bottom: 1.25px;
 }
 
 .additional-versions {
-  margin-left: 0.5rem;
+  margin-left: var(--spacing-xs);
   font-family: var(--font-open-sans);
-  font-size: 0.75rem;
+  font-size: var(--spacing-s);
   font-weight: 400;
-  color: rgb(97, 113, 125);
+  color: var(--text-color-dark-blue);
 }
 
 @media (max-width: 1042px) {
   .header-container {
-    gap: var(--size-2rem);
-    margin: 0 9%;
+    gap: var(--spacing-xl);
+    margin: 0 var(--spacing-page-side-lg);
   }
   .projects-container {
-    margin: 0 9%;
+    margin: 0 var(--spacing-page-side-lg);
   }
 }
 
 @media (max-width: 1200px) {
   .header-container {
-    margin: 0 10%;
+    margin: 0 var(--spacing-page-side-xl);
   }
   .projects-container {
-    margin: 0 10%;
+    margin: 0 var(--spacing-page-side-xl);
   }
 }
 
 @media (max-width: 1000px) {
   .header-container {
-    margin: 0 5%;
+    margin: 0 var(--spacing-page-side-md);
   }
   .projects-container {
-    margin: 0 5%;
+    margin: 0 var(--spacing-page-side-md);
   }
   .list-item-header {
     flex-direction: column;
@@ -458,11 +476,9 @@ input[type='search']::-webkit-search-cancel-button {
 
   .cross-icon {
     position: relative;
-    margin-top: 0.25rem;
-    margin-right: 0.5rem;
     cursor: pointer;
     top: 0;
-    right: 0;
+    right: var(--spacing-sm);
     z-index: 1001;
   }
   .cross-icon button {
@@ -478,7 +494,7 @@ input[type='search']::-webkit-search-cancel-button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #191e1e;
+    background-color: var(--color-charcoal);
     z-index: 1000;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
@@ -488,7 +504,7 @@ input[type='search']::-webkit-search-cancel-button {
   }
 
   .side-menu-navigation {
-    padding: var(--size-3rem);
+    padding: var(--spacing-xxl);
   }
 
   .side-menu-navigation span {
@@ -496,14 +512,14 @@ input[type='search']::-webkit-search-cancel-button {
     align-items: var(--align-center);
     justify-content: space-between;
     height: 60px;
-    line-height: var(--size-3rem);
+    line-height: var(--spacing-xxl);
     border-bottom: 1px solid hsla(0, 0%, 100%, 0.4);
     color: var(--bg-color-white);
     font-family: var(--font-open-sans);
     font-weight: 400;
-    font-size: var(--size-2rem);
-    margin: var(--size-1rem) 0;
-    padding-bottom: 0.5rem;
+    font-size: var(--spacing-xl);
+    margin: var(--spacing-sm) 0;
+    padding-bottom: var(--spacing-xs);
     cursor: pointer;
   }
 
@@ -520,7 +536,7 @@ input[type='search']::-webkit-search-cancel-button {
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: middle;
-    margin-right: 0.5rem;
+    margin-right: var(--spacing-xs);
   }
 
   .side-menu-list {
@@ -534,10 +550,10 @@ input[type='search']::-webkit-search-cancel-button {
 
   .side-menu-list a {
     text-decoration: none;
-    color: rgb(152, 175, 174);
+    color: var(--text-color-muted-teal);
     align-content: var(--align-center);
     font-family: var(--font-open-sans);
-    font-size: 1.25rem;
+    font-size: var(--spacing-md);
   }
 
   .side-menu-list a:hover {
@@ -552,7 +568,7 @@ input[type='search']::-webkit-search-cancel-button {
 
   .projects-container {
     margin: 0;
-    padding: var(--size-3rem) var(--size-2rem);
+    padding: var(--spacing-xxl) var(--spacing-xl);
   }
 
   .search-container label {
@@ -572,6 +588,6 @@ input[type='search']::-webkit-search-cancel-button {
     width: 100%;
   }
   .results-not-found {
-    font-size: 1.2rem;
+    font-size: var(--spacing-page-side-sm);
   }
 }
