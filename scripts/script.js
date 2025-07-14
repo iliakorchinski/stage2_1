@@ -2,6 +2,7 @@ import { links, projects } from './data.js';
 import { renderItems } from './items.js';
 import { renderMenu } from './menu.js';
 import { toggleBurgerMenu } from './mobile-menu.js';
+import { clearInput, debouncedSearch } from './search.js';
 
 const listContainer = document.querySelector('#list-container');
 
@@ -17,3 +18,5 @@ window.addEventListener('resize', () => {
 renderMenu(links);
 renderItems(projects, listContainer);
 toggleBurgerMenu();
+clearInput();
+debouncedSearch();

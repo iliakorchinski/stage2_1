@@ -1,3 +1,5 @@
+const listContainer = document.querySelector('.list-container');
+
 const itemForRender = (data) => {
   const itemArticle = document.createElement('article');
   itemArticle.classList.add('list-item');
@@ -54,6 +56,13 @@ const itemForRender = (data) => {
 };
 
 export const renderItems = (items, container) => {
+  container.replaceChildren();
+  if (typeof items === 'string') {
+    const notFound = document.createElement('p');
+    notFound.classList.add('results-not-found');
+    notFound.textContent = items;
+    listContainer.appendChild(notFound);
+  }
   items.forEach((item) => {
     const itemArtickle = itemForRender(item);
 
