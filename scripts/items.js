@@ -58,7 +58,10 @@ const itemForRender = (data) => {
 export const renderItems = (items, container) => {
   container.replaceChildren();
   if (typeof items === 'string') {
-    listContainer.innerHTML = `<p class="results-not-found">${items}</p>`;
+    const notFound = document.createElement('p');
+    notFound.classList.add('results-not-found');
+    notFound.textContent = items;
+    listContainer.appendChild(notFound);
   }
   items.forEach((item) => {
     const itemArtickle = itemForRender(item);
