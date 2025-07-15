@@ -20,7 +20,7 @@
               />
             </a>
           </div>
-          <div class="burger-menu">
+          <div class="burger-menu" id="burger-menu">
             <button>
               <img
                 src="assets/icons/burger-menu-svgrepo-com.svg"
@@ -30,6 +30,19 @@
               />
             </button>
           </div>
+          <div class="cross-icon hidden" id="cross-icon">
+            <button>
+              <img
+                src="assets/icons/cross-svgrepo-com (1).svg"
+                alt="cross-icon"
+                height="32"
+                width="32"
+              />
+            </button>
+          </div>
+        </div>
+        <div class="side-menu hidden" id="side-menu">
+          <div class="side-menu-navigation" id="side-menu-navigation"></div>
         </div>
 
         <div class="header-container">
@@ -53,7 +66,7 @@
             </button>
           </div>
           <div class="nav-links">
-            <div class="links-container">
+            <div class="links-container" id="links-container">
               <div><a class="link" href="#">Tanzu Spring</a></div>
             </div>
           </div>
@@ -81,8 +94,30 @@
         </section>
       </div>
       <div>
+        <div role="search" aria-label="search" class="search-container">
+          <label for="search">Search the site:</label>
+          <input
+            type="search"
+            id="site-search"
+            placeholder="Search..."
+            autocomplete="off"
+          />
+          <button
+            type="button"
+            id="clear-btn"
+            class="clear-input-btn hidden"
+            aria-label="clear search"
+          >
+            <img
+              src="assets/icons/cross-icon-green.svg"
+              alt="clear search"
+              height="24"
+              width="24"
+            />
+          </button>
+        </div>
         <div class="items-container">
-          <div class="list-container"></div>
+          <div class="list-container" id="list-container"></div>
         </div>
       </div>
     </main>
